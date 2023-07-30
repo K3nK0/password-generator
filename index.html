@@ -5,25 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Password generator app</title>
 </head>
 <body>
 
-  Password Generator
+  <div class="container">
 
-  P4$5W0rD!
+    <h1>Password Generator</h1>
 
-  Character Length
+    <div class="container-password">
+      <p class="password-result">P4$5W0rD!</p>
+      <div class="container-copy">
+        <span class="txt-copy">Copied</span>
+        <img src="assets/images/icon-copy.svg" alt="icon copy" id="icon-copy">
+      </div>
+    </div>
 
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
+    <form>
 
-  Strength
+      <div class="input-length">
+        <label for="character-length">Character Length <span id="value-character-length">0</span></label>
+        <input type="range" id="character-length" value="0" min="4" max="20">
+      </div>
 
-  Generate
+      <div class="input-check">
+        <input type="checkbox" id="uppercaseLetters">
+        <label for="uppercaseLetters">Include Uppercase Letters</label>
+      </div>
+      <div class="input-check">
+        <input type="checkbox" id="lowercaseLetters">
+        <label for="lowercaseLetters">Include Lowercase Letters</label>
+      </div>
+      <div class="input-check">
+        <input type="checkbox" id="numbersCharacters">
+        <label for="numbersCharacters">Include Numbers</label>
+      </div>
+      <div class="input-check">
+        <input type="checkbox" id="symbolsCharacters">
+        <label for="symbolsCharacters">Include Symbols</label>
+      </div>
+
+      <div class="password-strength">
+        <p>Strength</p>
+        <div class="container-password-strength">
+          <span id="level-password">MEDIUM</span>
+          <div class="rod-level">
+            <span class="rod"></span>
+            <span class="rod"></span>
+            <span class="rod"></span>
+            <span class="rod"></span>
+          </div>
+        </div>
+      </div>
+
+      <button>Generate</button>
+
+    </form>
+
+  </div>
 
 </body>
 </html>
