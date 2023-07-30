@@ -31,36 +31,58 @@
       <div class="input-length">
         <div class="container-label-length">
           <label for="character-length">Character Length</label>
-          <span id="value-character-length">4</span>
+          <span id="value-character-length">0</span>
         </div>
         <div class="input-range">
           <div class="background-range"></div>
-          <input type="range" id="character-length" value="0" min="4" max="20">
+          <input type="range" id="character-length" value="0" min="0" max="20">
         </div>
-        
       </div>
 
       <div class="input-check">
         <input type="checkbox" id="uppercaseLetters">
-        <label for="uppercaseLetters">Include Uppercase Letters</label>
+        <label for="uppercaseLetters">
+          <span class="back-svg">
+            <svg width="14" height="12" xmlns="http://www.w3.org/2000/svg"><path stroke="#18171F" stroke-width="3" fill="none" d="M1 5.607 4.393 9l8-8"/></svg>
+          </span>
+          Include Uppercase Letters
+        </label>
       </div>
+
       <div class="input-check">
         <input type="checkbox" id="lowercaseLetters">
-        <label for="lowercaseLetters">Include Lowercase Letters</label>
+        <label for="lowercaseLetters">
+          <span class="back-svg">
+            <svg width="14" height="12" xmlns="http://www.w3.org/2000/svg"><path stroke="#18171F" stroke-width="3" fill="none" d="M1 5.607 4.393 9l8-8"/></svg>
+          </span>
+          Include Lowercase Letters
+        </label>
       </div>
+
       <div class="input-check">
         <input type="checkbox" id="numbersCharacters">
-        <label for="numbersCharacters">Include Numbers</label>
+        <label for="numbersCharacters">
+          <span class="back-svg">
+            <svg width="14" height="12" xmlns="http://www.w3.org/2000/svg"><path stroke="#18171F" stroke-width="3" fill="none" d="M1 5.607 4.393 9l8-8"/></svg>
+          </span>
+          Include Numbers
+        </label>
       </div>
+
       <div class="input-check">
         <input type="checkbox" id="symbolsCharacters">
-        <label for="symbolsCharacters">Include Symbols</label>
+        <label for="symbolsCharacters">
+          <span class="back-svg">
+            <svg width="14" height="12" xmlns="http://www.w3.org/2000/svg"><path stroke="#18171F" stroke-width="3" fill="none" d="M1 5.607 4.393 9l8-8"/></svg>
+          </span>
+          Include Symbols
+        </label>
       </div>
 
       <div class="password-strength">
         <p>Strength</p>
         <div class="container-password-strength">
-          <span id="level-password">MEDIUM</span>
+          <span id="level-password"></span>
           <div class="rod-level">
             <span class="rod"></span>
             <span class="rod"></span>
@@ -70,7 +92,10 @@
         </div>
       </div>
 
-      <button>Generate</button>
+      <button>
+        Generate
+        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
+      </button>
 
     </form>
 

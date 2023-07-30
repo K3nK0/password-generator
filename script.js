@@ -10,8 +10,7 @@ const valueLenghtPassword = document.getElementById('value-character-length');
 
 function handleBackRange(value) {
     
-    let valueRange = value - 4;
-    let pourcentageValue = valueRange / 16 * 100;
+    let pourcentageValue = value / 20 * 100;
     backInputRange.style.left = `${pourcentageValue}%`;
 
     valueLenghtPassword.textContent = value;

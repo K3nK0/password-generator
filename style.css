@@ -92,10 +92,13 @@ form {
     color: var(--neon-green);
 }
 
+/* INPUT RANGE */
+
 .input-range {
     position: relative;
     height: 28px;
     overflow: hidden;
+    margin-bottom: 32px;
 }
 
 input[type="range"] {
@@ -110,7 +113,6 @@ input[type="range"] {
     color: var(--almost-white);
     cursor: pointer;
 }
-
 
 input[type="range"]::-webkit-slider-runnable-track {
     height: 8px;
@@ -181,4 +183,137 @@ input[type="range"]::-ms-thumb:hover {
     transform: translateY(-50%);
     background: var(--very-dark-grey);
     z-index: 2;
+}
+
+/* INPUT CHECK */
+
+.input-check {
+    margin-bottom: 19px;
+}
+
+.input-check:nth-child(5) {
+    margin-bottom: 31px;
+}
+
+.input-check label {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.back-svg {
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--almost-white);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.back-svg:hover {
+    border: 2px solid var(--neon-green);
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+}
+
+input[type="checkbox"]:checked + label > .back-svg {
+    background: var(--neon-green);
+    border: 2px solid var(--neon-green);
+}
+
+/* STRENGTH */
+
+.password-strength {
+    width: 100%;
+    background: var(--very-dark-grey);
+    padding: 25px 32px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-strength p {
+    color: var(--grey);
+    text-transform: uppercase;
+}
+
+.container-password-strength {
+    display: flex;
+    gap: 15.5px;
+}
+
+#level-password {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.rod-level {
+    display: flex;
+    gap: 8px;
+}
+
+.rod {
+    width: 10px;
+    height: 28px;
+    border: 2px solid var(--almost-white);
+}
+
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    height: 65px;
+    border: none;
+    background: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    cursor: pointer;
+    font-family: "JetBrains Mono";
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: var(--dark-grey);
+    color: var(--neon-green);
+    fill: var(--neon-green);
+}
+
+button svg {
+    margin-left: 24px;
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+
+    .container {
+        margin: 64px auto 0;
+        width: 343px;
+    }
+
+    form {
+        padding: 21px 16px 16px 16px;
+    }
+
+    .password-result {
+        font-size: 24px;
+    }
+
+    #value-character-length {
+        font-size: 24px;
+    }
+
+    #level-password {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+    }
 }
