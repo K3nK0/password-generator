@@ -64,7 +64,13 @@ h1 {
     font-size: 18px;
     color: var(--neon-green);
     text-transform: uppercase;
+    opacity: 0;
+    transition: opacity .3s ease-out;
 }
+.container-copy .txt-copy.active {
+    opacity: 1;
+}
+
 
 #icon-copy {
     height: 24px;

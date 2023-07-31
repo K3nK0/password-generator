@@ -65,12 +65,10 @@ function createPassword() {
     for(let i = 0; i < checkedDataSets.length; i++){
         passwordBase += checkedDataSets[i][getRandomNumber(0, checkedDataSets[i].length - 1)]
     }
-    console.log(passwordBase);
 
     for(let i = checkedDataSets.length; i < passwordLenght.value; i++){
         password += concatenatedDataSets[getRandomNumber(0, concatenatedDataSets.length - 1)]
     }
-    console.log(passwordLenght.value);
 
     for(let i = 0; i < passwordBase.length; i++){
         const randomIndex = getRandomNumber(0, password.length);
@@ -92,3 +90,24 @@ function checkedSets(){
     checkboxes.forEach(checkbox => checkbox.checked && dataCharacters.push(characterSet[checkbox.id]));
     return dataCharacters;
 }
+
+
+// copie password
+
+const copyBtn = document.querySelector('#icon-copy');
+const copyMsg = document.querySelector('.txt-copy');
+
+copyBtn.addEventListener('click', () => {
+    let locked = false;
+    navigator.clipboard.writeText(passwordResult.textContent);
+
+    if(!locked){
+        copyMsg.classList.add('active');
+        locked = true;
+
+        setTimeout(() => {
+            copyMsg.classList.remove('active');
+            locked = false;
+        }, 1200)
+    }
+})
