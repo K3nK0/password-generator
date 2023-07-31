@@ -50,6 +50,13 @@ const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
+
+    levelPassword.textContent = "";
+    rodsStreigth.forEach((rod) => {
+        rod.style.background = "transparent";
+        rod.style.border = "2px solid var(--almost-white)";
+    })
+
     createPassword();
 })
 
@@ -83,7 +90,10 @@ function createPassword() {
     
     passwordResult.textContent = passwordFinal;
     passwordResult.style.opacity = 1;
+
+    handleLevelStreigth();
 }
+
 
 function checkedSets(){
     const dataCharacters = [];
@@ -111,3 +121,52 @@ copyBtn.addEventListener('click', () => {
         }, 1200)
     }
 })
+
+// force du password
+
+const rodsStreigth = document.querySelectorAll('.rod');
+const levelPassword = document.getElementById('level-password');
+
+const strength = [
+    ['TOO WEAK!', "#F64A4A"],
+    ['WEAK', '#FB7C58'],
+    ['MEDIUM', '#F8CD65'],
+    ['STRONG', '#A4FFAF']
+]
+
+
+function handleDisplayStreigth(levelStreigth) {
+    levelPassword.textContent = `${strength[levelStreigth][0]}`;
+
+    for(let i = 0; i < levelStreigth + 1; i++){
+        rodsStreigth[i].style.background = `${strength[levelStreigth][1]}`;
+        rodsStreigth[i].style.border = `2px solid ${strength[levelStreigth][1]}`;
+    }
+}
+
+
+function handleLevelStreigth() {
+    let levelStreigth = -1;
+    let checkboxChecked = 0;
+    checkboxes.forEach(boxe => {
+        if(boxe.checked){
+            checkboxChecked++
+        }
+    })
+
+    if(passwordLenght.value < 6 || checkboxChecked < 2){
+        levelStreigth = 0
+    }
+    else if(8 <= passwordLenght.value && checkboxChecked === 4){
+        levelStreigth = 3
+    }
+    else if(passwordLenght.value >= 6 && checkboxChecked < 3){
+        levelStreigth = 1
+    }
+    else if(6 < passwordLenght.value < 8 && checkboxChecked <= 4){
+        levelStreigth = 2
+    }
+
+    handleDisplayStreigth(levelStreigth)
+}
+
